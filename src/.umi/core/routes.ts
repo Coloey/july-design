@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType, dynamic } from 'D:/MyReactComponents/node_modules/@umijs/runtime';
+import { ApplyPluginsType, dynamic } from 'D:/myreactcomponents/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
@@ -60,15 +60,15 @@ export function getRoutes() {
     "__dumiRoot": true,
     "layout": false,
     "path": "/",
-    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'../dumi/layout')}), dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'D:/MyReactComponents/node_modules/dumi-theme-default/es/layout.js')})],
+    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'../dumi/layout')}), dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'D:/myreactcomponents/node_modules/dumi-theme-default/es/layout.js')})],
     "routes": [
       {
         "path": "/alert",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'alert__index.md' */'D:/MyReactComponents/src/alert/index.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'alert__index.md' */'D:/myreactcomponents/src/alert/index.md')}),
         "exact": true,
         "meta": {
           "filePath": "src/alert/index.md",
-          "updatedTime": 1662867725000,
+          "updatedTime": 1663409470000,
           "componentName": "alert",
           "title": "Alert 警告提示",
           "group": {
@@ -105,11 +105,11 @@ export function getRoutes() {
       },
       {
         "path": "/button",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'button__index.md' */'D:/MyReactComponents/src/button/index.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'button__index.md' */'D:/myreactcomponents/src/button/index.md')}),
         "exact": true,
         "meta": {
           "filePath": "src/button/index.md",
-          "updatedTime": 1663243199907,
+          "updatedTime": 1663409470000,
           "componentName": "button",
           "title": "Button",
           "group": {

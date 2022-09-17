@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createBrowserHistory, History } from 'D:/MyReactComponents/node_modules/@umijs/runtime';
+import { createBrowserHistory, History } from 'D:/myreactcomponents/node_modules/@umijs/runtime';
 
 let options = {
   "basename": "/my-react-components"
