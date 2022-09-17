@@ -21,3 +21,13 @@ group:
 <code src="./demo/basic.tsx"></code>
 
 ## API
+
+| 属性     | 说明                                                | 类型                             | 默认值    |
+| -------- | --------------------------------------------------- | -------------------------------- | --------- |
+| disabled | 按钮失效状态                                        | boolean                          | false     |
+| href     | 点击跳转地址，指定此属性 button 的行为和 a 链接一致 | string                           | -         |
+| shape    | 设置按钮形状                                        | default/circle/round             | 'default' |
+| size     | 设置按钮大小                                        | large/middle/small               | middle    |
+| target   | 相当于 a 链接的 target 属性，href 存在时生效        | string                           |
+| type     | 设置按钮类型                                        | primary/dashed/link/text/default | default   |
+| onClick  | 点击按钮时的回调                                    | (event)=>void                    | -         |

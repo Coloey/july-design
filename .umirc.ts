@@ -1,6 +1,6 @@
 import { defineConfig } from 'dumi';
-let base = '/my-react-components';
-let publicPath = '/my-react-components/';
+let base = '/july-design';
+let publicPath = '/july-design/';
 if(process.env.SITE_BUID_ENV === 'PREVIEW'){
   base = undefined;
   publicPath = undefined;
