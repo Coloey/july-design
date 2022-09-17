@@ -1,36 +1,54 @@
 import React from 'react';
-import t from 'prop-types';
-
+import classnames from 'classnames';
+import { useState } from 'react';
 export interface AlertProps {
-  children?:string
-  kind?: 'info' | 'positive' | 'negative' | 'warning';
+  style?: object,
+  closable?: boolean,
+  closeText?: string,
+  message: string,
+  description?: string,
+  type?: 'success'|'error'|'info'|'warning',
+  onClose?: Function,
+  children?: string
 }
-
-export type KindMap = Record<Required<AlertProps>['kind'], string>;
 
 const prefixCls = 'alert';
 
-const kinds: KindMap = {
-  info: '#5352ED',
-  positive: '#2ED573',
-  negative: '#FF4757',
-  warning: '#FFA502',
-};
-
-const Alert: React.FC<AlertProps> = ({children,kind = 'info', ...rest }) => (
-  <div
-    className={prefixCls}
+const Alert: React.FC<AlertProps> = (props) => {
+  const {
+    style,
+    closable,
+    closeText,
+    message,
+    description,
+    type='info',
+    onClose,
+    children
+  } = props
+  let [visible,setVisible] = useState(true)
+  const handleClose = () =>{
+    setVisible(false)
+    onClose && onClose()
+  }
+  return(
+    visible
+    ? <div
+    className={classnames(prefixCls,type || "warning")}
     style={{
-      background: kinds[kind],
-    }}
-    {...rest}   
+      opacity:visible ? '1' : '0',
+      ...style
+    }}  
   >
+    <div className = 'alertMes'>{message}</div>
+    {description&&<div className = 'alertDesc'>{description}</div>}
+    {
+      !!closable && <span className='closeBtn' 
+      onClick={handleClose}
+      >{closeText ? closeText : 'x' }</span>
+    }
     {children}
   </div>
-);
-
-Alert.propTypes = {
-  kind: t.oneOf(['info', 'positive', 'negative', 'warning']),
+  :null
+  ) 
 };
-
 export default Alert;

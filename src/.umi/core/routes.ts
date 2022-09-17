@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType, dynamic } from 'D:/MyReactComponents/node_modules/umi/node_modules/@umijs/runtime';
+import { ApplyPluginsType, dynamic } from 'D:/MyReactComponents/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
@@ -60,7 +60,7 @@ export function getRoutes() {
     "__dumiRoot": true,
     "layout": false,
     "path": "/",
-    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'../dumi/layout')}), dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'D:/MyReactComponents/node_modules/@umijs/preset-dumi/node_modules/dumi-theme-default/es/layout.js')})],
+    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'../dumi/layout')}), dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'D:/MyReactComponents/node_modules/dumi-theme-default/es/layout.js')})],
     "routes": [
       {
         "path": "/alert",
@@ -68,14 +68,9 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/alert/index.md",
-          "updatedTime": 1661737902793,
+          "updatedTime": 1662867725000,
           "componentName": "alert",
           "title": "Alert 警告提示",
-          "nav": {
-            "title": "组件",
-            "order": 2,
-            "path": "/alert"
-          },
           "group": {
             "title": "反馈",
             "order": 1,
@@ -106,10 +101,56 @@ export function getRoutes() {
           ],
           "hasPreviewer": true
         },
-        "title": "Alert 警告提示 - My UI"
+        "title": "Alert 警告提示 - july design"
+      },
+      {
+        "path": "/button",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'button__index.md' */'D:/MyReactComponents/src/button/index.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/button/index.md",
+          "updatedTime": 1663243199907,
+          "componentName": "button",
+          "title": "Button",
+          "group": {
+            "title": "反馈",
+            "order": 2,
+            "__fallback": true,
+            "path": "/button"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Button 按钮",
+              "heading": "button-按钮"
+            },
+            {
+              "depth": 3,
+              "value": "何时使用",
+              "heading": "何时使用"
+            },
+            {
+              "depth": 2,
+              "value": "代码演示",
+              "heading": "代码演示"
+            },
+            {
+              "depth": 3,
+              "value": "基本用法",
+              "heading": "基本用法"
+            },
+            {
+              "depth": 2,
+              "value": "API",
+              "heading": "api"
+            }
+          ],
+          "hasPreviewer": true
+        },
+        "title": "Button - july design"
       }
     ],
-    "title": "My UI",
+    "title": "july design",
     "component": (props) => props.children
   }
 ];

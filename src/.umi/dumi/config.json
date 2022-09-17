@@ -1,17 +1,23 @@
 {
   "menus": {
     "en-US": {
-      "/alert": [
+      "*": [
         {
           "title": "反馈",
+          "path": "/alert",
           "meta": {
-            "order": 1,
+            "order": 2,
             "__fallback": true
           },
           "children": [
             {
               "path": "/alert",
               "title": "Alert 警告提示",
+              "meta": {}
+            },
+            {
+              "path": "/button",
+              "title": "Button",
               "meta": {}
             }
           ]
@@ -25,17 +31,9 @@
       "label": "English"
     }
   ],
-  "navs": {
-    "en-US": [
-      {
-        "title": "组件",
-        "order": 2,
-        "path": "/alert"
-      }
-    ]
-  },
-  "title": "My UI",
-  "mode": "site",
+  "navs": {},
+  "title": "july design",
+  "mode": "doc",
   "repository": {
     "url": "",
     "branch": "master"

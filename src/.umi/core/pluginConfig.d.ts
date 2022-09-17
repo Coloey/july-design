@@ -292,5 +292,14 @@ excludes?: string[]
 apiParser?: {
 
 }
+sass?: {
+implementation?: any
+sassOptions?: {
+
+}
+prependData?: (string | (() => any))
+sourceMap?: boolean
+webpackImporter?: boolean
+}
 [k: string]: any
 }

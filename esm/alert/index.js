@@ -1,31 +1,49 @@
-import _extends from "@babel/runtime/helpers/esm/extends";
-import _objectWithoutProperties from "@babel/runtime/helpers/esm/objectWithoutProperties";
-var _excluded = ["children", "kind"];
+import _defineProperty from "@babel/runtime/helpers/esm/defineProperty";
+import _slicedToArray from "@babel/runtime/helpers/esm/slicedToArray";
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
 import React from 'react';
-import t from 'prop-types';
+import classnames from 'classnames';
+import { useState } from 'react';
 var prefixCls = 'alert';
-var kinds = {
-  info: '#5352ED',
-  positive: '#2ED573',
-  negative: '#FF4757',
-  warning: '#FFA502'
+
+var Alert = function Alert(props) {
+  var style = props.style,
+      closable = props.closable,
+      closeText = props.closeText,
+      message = props.message,
+      description = props.description,
+      _props$type = props.type,
+      type = _props$type === void 0 ? 'info' : _props$type,
+      onClose = props.onClose,
+      children = props.children;
+
+  var _useState = useState(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      visible = _useState2[0],
+      setVisible = _useState2[1];
+
+  var handleClose = function handleClose() {
+    setVisible(false);
+    onClose && onClose();
+  };
+
+  return visible ? /*#__PURE__*/React.createElement("div", {
+    className: classnames(prefixCls, type || "warning"),
+    style: _objectSpread({
+      opacity: visible ? '1' : '0'
+    }, style)
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "alertMes"
+  }, message), description && /*#__PURE__*/React.createElement("div", {
+    className: "alertDesc"
+  }, description), !!closable && /*#__PURE__*/React.createElement("span", {
+    className: "closeBtn",
+    onClick: handleClose
+  }, closeText ? closeText : 'x'), children) : null;
 };
 
-var Alert = function Alert(_ref) {
-  var children = _ref.children,
-      _ref$kind = _ref.kind,
-      kind = _ref$kind === void 0 ? 'info' : _ref$kind,
-      rest = _objectWithoutProperties(_ref, _excluded);
-
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: prefixCls,
-    style: {
-      background: kinds[kind]
-    }
-  }, rest), children);
-};
-
-Alert.propTypes = {
-  kind: t.oneOf(['info', 'positive', 'negative', 'warning'])
-};
 export default Alert;

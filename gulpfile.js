@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const babel = require("gulp-babel");
-const less = require("gulp-less");
+const sass = require("gulp-sass")(require("sass"));
 const autoprefixer = require("gulp-autoprefixer");
 const cssnano = require("gulp-cssnano");
 const through2 = require("through2");
@@ -14,8 +14,12 @@ const paths = {
     esm: "esm", //ES module文件存放的目录名，暂时不关心
     dist: "dist", //umd文件存放的目录名,暂时不关心
   },
-  styles: "src/**/*.less", //样式文件路径
-  scripts: ["src/**/*.{ts,tsx}", "!src/**/demo/*.{ts,tsx}"], //脚本路径,glob详细https://www.gulpjs.com.cn/docs/getting-started/explaining-globs/
+  styles: "src/**/*.scss", //样式文件路径
+  scripts: [
+    "src/**/*.{ts,tsx}",
+    "!src/**/demo/*.{ts,tsx}",
+    "!src/**/__tests__/*.{ts,tsx}",
+  ], //脚本路径,glob详细https://www.gulpjs.com.cn/docs/getting-started/explaining-globs/
 };
 //当前组件样式import './index.less'=>import './index.css'
 //依赖的其他组件样式 import "../test-comp/style"=>import "../test-comp/style/css.js"
@@ -25,7 +29,7 @@ function cssInction(content) {
   return content
     .replace(/\/style\/?'/g, "/style/css'")
     .replace(/\/style\/?"/g, '/style/css"')
-    .replace(/\.less/g, ".css");
+    .replace(/\.scss/g, ".css");
 }
 function compileScripts(babelEnv, destDir) {
   const { scripts } = paths;
@@ -59,18 +63,18 @@ function compileESM() {
   const { dest } = paths;
   return compileScripts("esm", dest.esm);
 }
-//拷贝less文件
-function copyLess() {
+//拷贝scss文件
+function copyScss() {
   return gulp
     .src(paths.styles)
     .pipe(gulp.dest(paths.dest.lib))
     .pipe(gulp.dest(paths.dest.esm));
 }
 //生成css文件
-function less2css() {
+function Scss2css() {
   return gulp
     .src(paths.styles)
-    .pipe(less()) //处理less文件
+    .pipe(sass()) //处理scss文件
     .pipe(autoprefixer()) //根据browserslistrc增加前缀
     .pipe(cssnano({ zindex: false, reduceIdents: false })) //压缩
     .pipe(gulp.dest(paths.dest.lib))
@@ -79,6 +83,6 @@ function less2css() {
 //串行执行编译脚本任务,避免环境变量影响
 const buildScripts = gulp.series(compileCJS, compileESM);
 //整体并行任务，后续加入样式处理 可以并行处理
-const build = gulp.parallel(buildScripts, copyLess, less2css);
+const build = gulp.parallel(buildScripts, copyScss, Scss2css);
 exports.build = build;
 exports.default = build;

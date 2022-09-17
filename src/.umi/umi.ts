@@ -4,8 +4,8 @@ import '@@/core/devScripts';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from 'D:/MyReactComponents/node_modules/umi/node_modules/@umijs/runtime';
-import { renderClient } from 'D:/MyReactComponents/node_modules/umi/node_modules/@umijs/preset-built-in/node_modules/@umijs/renderer-react/dist/index18.js';
+import { ApplyPluginsType } from 'D:/MyReactComponents/node_modules/@umijs/runtime';
+import { renderClient } from 'D:/MyReactComponents/node_modules/@umijs/renderer-react/dist/index18.js';
 import { getRoutes } from './core/routes';
 
 
@@ -25,7 +25,7 @@ const getClientRender = (args: { hot?: boolean; routes?: any[] } = {}) => plugin
         isServer: process.env.__IS_SERVER,
         dynamicImport: true,
         rootElement: 'root',
-        defaultTitle: `My UI`,
+        defaultTitle: `july design`,
       },
     });
     return renderClient(opts);
@@ -38,7 +38,7 @@ export default clientRender();
 
 
     window.g_umi = {
-      version: '3.5.33',
+      version: '3.5.34',
     };
   
 

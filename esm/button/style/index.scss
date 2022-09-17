@@ -1,0 +1,122 @@
+$prefixCls: button;
+$btn-primary: #3697f1;
+$btn-focus: #70b3f5;
+$btn-default-border: #007bff;
+$btn-danger: #f5222d;
+$gray-200:               #e9ecef;
+$gray-300:               #dee2e6;
+$gray-400:               #ced4da;
+$gray-500:               #adb5bd;
+$gray-600:               #6c757d;
+$gray-700:               #495057;
+$gray-800:               #343a40;
+$gray-900:               #212529;
+$large: 120px;
+$middle: 100px;
+$small: 60px;
+
+.#{$prefixCls} {
+    display: inline-block;
+    margin: 10px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background-image: none;
+    outline: none;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 3px;
+    background-color: #fff;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        background-color: $btn-focus;
+        text-decoration: none;
+        outline: none;
+    }
+    &[disabled] {
+        position: relative;
+        box-shadow: none;
+    }
+    &.primary {
+        color: #fff;
+        background: $btn-primary;
+        border: 1px solid $btn-primary; 
+        &:hover,
+        &:focus {
+            background-color: $btn-focus;
+            text-decoration: none;
+            outline: none;
+        }      
+    }
+    &.default {
+        border: 1px solid $gray-700;     
+        &:hover,
+        &:focus {
+            border: 1px solid $btn-default-border;
+            background-color: #fff;
+            color: $btn-default-border
+        }
+    }
+    &.dashed {
+        border: 1px dotted $gray-700;
+        &:hover,
+        &:focus {
+            border: 1px dotted $btn-default-border;
+            background-color: #fff;
+            color: $btn-default-border
+        }
+    }
+    &.link{
+        color:$btn-primary;
+        &:hover,
+        &:focus {
+            background-color: #fff;
+        }
+    }
+    &.text {
+        &:hover,
+        &:focus {
+            background-color: $gray-300;
+        }
+    }
+    &.large{       
+        width: $large;
+        height: 40px;
+        &.circle {
+            width: $large;
+            height: $large;
+            border-radius: calc($large/2);
+        }
+        &.round {
+            border-radius: calc($large/2);
+        }
+
+    }
+    &.middle{
+        width: $middle;        
+        height: 30px;
+        &.circle {
+            width: $middle;
+            height: $middle;
+            border-radius: calc($middle/2);
+        }
+        &.round {
+            border-radius: calc($middle/2);
+        }
+
+    }
+    &.small{
+        width: $small;      
+        height: 20px;
+        &.circle {
+            width: $small;
+            height: $small;
+            border-radius: calc($small/2);
+        }
+        &.round {
+            border-radius: calc($small/2);
+        }
+    }
+}
