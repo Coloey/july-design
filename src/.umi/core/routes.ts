@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType, dynamic } from 'D:/myreactcomponents/node_modules/@umijs/runtime';
+import { ApplyPluginsType, dynamic } from 'D:/MyReactComponents/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
@@ -60,11 +60,11 @@ export function getRoutes() {
     "__dumiRoot": true,
     "layout": false,
     "path": "/",
-    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'../dumi/layout')}), dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'D:/myreactcomponents/node_modules/dumi-theme-default/es/layout.js')})],
+    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'../dumi/layout')}), dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'D:/MyReactComponents/node_modules/dumi-theme-default/es/layout.js')})],
     "routes": [
       {
         "path": "/alert",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'alert__index.md' */'D:/myreactcomponents/src/alert/index.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'alert__index.md' */'D:/MyReactComponents/src/alert/index.md')}),
         "exact": true,
         "meta": {
           "filePath": "src/alert/index.md",
@@ -72,7 +72,7 @@ export function getRoutes() {
           "componentName": "alert",
           "title": "Alert 警告提示",
           "group": {
-            "title": "反馈",
+            "title": "组件",
             "order": 1,
             "__fallback": true,
             "path": "/alert"
@@ -105,15 +105,15 @@ export function getRoutes() {
       },
       {
         "path": "/button",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'button__index.md' */'D:/myreactcomponents/src/button/index.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'button__index.md' */'D:/MyReactComponents/src/button/index.md')}),
         "exact": true,
         "meta": {
           "filePath": "src/button/index.md",
-          "updatedTime": 1663409470000,
+          "updatedTime": 1663418580000,
           "componentName": "button",
           "title": "Button",
           "group": {
-            "title": "反馈",
+            "title": "组件",
             "order": 2,
             "__fallback": true,
             "path": "/button"
@@ -148,6 +148,47 @@ export function getRoutes() {
           "hasPreviewer": true
         },
         "title": "Button - july design"
+      },
+      {
+        "path": "/image",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'image__index.md' */'D:/MyReactComponents/src/image/index.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/image/index.md",
+          "updatedTime": 1663556770000,
+          "componentName": "image",
+          "title": "Image 图片",
+          "group": {
+            "title": "组件",
+            "order": 3,
+            "__fallback": true,
+            "path": "/image"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Image 图片",
+              "heading": "image-图片"
+            },
+            {
+              "depth": 2,
+              "value": "何时使用",
+              "heading": "何时使用"
+            },
+            {
+              "depth": 2,
+              "value": "代码演示",
+              "heading": "代码演示"
+            },
+            {
+              "depth": 3,
+              "value": "基本用法",
+              "heading": "基本用法"
+            }
+          ],
+          "hasPreviewer": true
+        },
+        "title": "Image 图片 - july design"
       }
     ],
     "title": "july design",

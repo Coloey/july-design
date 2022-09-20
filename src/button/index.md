@@ -1,7 +1,7 @@
 ---
 title: Button
 group:
-  title: 反馈
+  title: 组件
   order: 2
 ---
 

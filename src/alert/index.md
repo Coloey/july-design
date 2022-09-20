@@ -1,7 +1,7 @@
 ---
 title: Alert 警告提示
 group:
-  title: 反馈
+  title: 组件
   order: 1
 ---
 
