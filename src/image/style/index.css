@@ -18,6 +18,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 .img-view img {
@@ -29,4 +30,32 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 10000;
+}
+
+.mask {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: opacity 0.3s;
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 5%;
+  right: 20%;
+  z-index: 10000;
+}
+
+.close:hover {
+  cursor: pointer;
 }

@@ -3,6 +3,13 @@
     "en-US": {
       "*": [
         {
+          "path": "/",
+          "title": "july-design",
+          "meta": {
+            "order": null
+          }
+        },
+        {
           "title": "组件",
           "path": "/alert",
           "meta": {

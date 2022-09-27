@@ -63,12 +63,32 @@ export function getRoutes() {
     "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'../dumi/layout')}), dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'D:/MyReactComponents/node_modules/dumi-theme-default/es/layout.js')})],
     "routes": [
       {
+        "path": "/",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'README.md' */'D:/MyReactComponents/README.md')}),
+        "exact": true,
+        "meta": {
+          "locale": "en-US",
+          "order": null,
+          "filePath": "README.md",
+          "updatedTime": 1663556928000,
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "july-design",
+              "heading": "july-design"
+            }
+          ],
+          "title": "july-design"
+        },
+        "title": "july-design"
+      },
+      {
         "path": "/alert",
         "component": dynamic({ loader: () => import(/* webpackChunkName: 'alert__index.md' */'D:/MyReactComponents/src/alert/index.md')}),
         "exact": true,
         "meta": {
           "filePath": "src/alert/index.md",
-          "updatedTime": 1663409470000,
+          "updatedTime": 1663683957000,
           "componentName": "alert",
           "title": "Alert 警告提示",
           "group": {
@@ -109,7 +129,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/button/index.md",
-          "updatedTime": 1663418580000,
+          "updatedTime": 1663683957000,
           "componentName": "button",
           "title": "Button",
           "group": {
@@ -155,7 +175,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/image/index.md",
-          "updatedTime": 1663556770000,
+          "updatedTime": 1663683957000,
           "componentName": "image",
           "title": "Image 图片",
           "group": {
@@ -184,6 +204,21 @@ export function getRoutes() {
               "depth": 3,
               "value": "基本用法",
               "heading": "基本用法"
+            },
+            {
+              "depth": 4,
+              "value": "图片加载失败",
+              "heading": "图片加载失败"
+            },
+            {
+              "depth": 4,
+              "value": "预览图片,图片部分加载失败",
+              "heading": "预览图片图片部分加载失败"
+            },
+            {
+              "depth": 4,
+              "value": "当网络速度较慢时，设置加载中占位",
+              "heading": "当网络速度较慢时设置加载中占位"
             }
           ],
           "hasPreviewer": true
