@@ -3,7 +3,7 @@ import { useState ,useEffect,useRef} from "react"
 import { useImageParams,useImage } from "./useImage"
 //import {CSSTransition} from "react-transition-group"
 import cn from "classnames"
-import { number, resetWarningCache } from "prop-types"
+//type srcList=string|string[]
 export type ImageProps =
 Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>,HTMLImageElement>,'src'>
 & Omit<useImageParams,'srcList'> & {
@@ -11,6 +11,8 @@ Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>,HTMLImage
     unloader?: JSX.Element | null | string;
     preview?: boolean,
     mask?: boolean,
+    maskClassName?:string,
+    src:useImageParams['srcList']
 
 }
 const initialPosition = {
@@ -27,16 +29,16 @@ const Image : React.FC<ImageProps>=(props)=>{
         mask,
         onClick,
         maskClassName,
-        ...imgProps
+        ...imageProps
     } = props
     const {src,loading,error} = useImage({
         srcList,
         loadImg,
     });
     const [showPreview,setShowPreview] = useState<boolean>(false)
-    const [mousePosition,setMousePosition] = useState<null | {x: number; y: number}>(null)  
+    const [mousePosition,setMousePosition] = useState<null | { x: number; y: number }>(null)  
     const [scale,setScale] = useState(1)
-    const [position,setPosition] = useState<{x:number,y:number}>(initialPosition)
+    const [position,setPosition] = useState<{ x: number,y: number }>(initialPosition)
     const originPositionRef = useRef<{
         originX: number,
         originY: number,
@@ -50,25 +52,25 @@ const Image : React.FC<ImageProps>=(props)=>{
     })
     let isControl = showPreview
     const [isMoving,setMoving] = useState<boolean>(false)
-    const imgRef = useRef<HTMLImageElement>()
-    const onPreview = (e:React.SyntheticEvent<Element>) => {
+    const imgRef = useRef() as HTMLImageElement | null
+    const onPreview = (e:MouseEvent) => {
         e.stopPropagation()
         setShowPreview(true)
         if(onClick)onClick(e)
     }
-    const closePreview = (e:React.SyntheticEvent<Element>) => {
-        console.log('click')
+    const closePreview = (e:MouseEvent) => {
+        //console.log('click')
         e.stopPropagation()
         setShowPreview(false)
         if(!isControl) {
-            setPosition(null)
+            setPosition(initialPosition)
         }
     }
-    const onWheelMove: React.WheelEventHandler<HTMLBodyElement> = event => {
+    const onWheelMove:React.WheelEventHandler<HTMLBodyElement> = event => {
         if(!showPreview)return
         event.preventDefault()       
     }
-    const onMouseDown: React.MouseEventHandler<HTMLDivElement> = event => {
+    const onMouseDown:React.MouseEventHandler<HTMLDivElement>  = event:MouseEvent => {
         if(event.button !== 0)return;
         event.preventDefault()
         event.stopPropagation()
@@ -78,7 +80,7 @@ const Image : React.FC<ImageProps>=(props)=>{
         originPositionRef.current.originY = position.y
         setMoving(true)
     }
-    const onMouseMove:React.MouseEventHandler<HTMLBodyElement> = event => {
+    const onMouseMove :React.MouseEventHandler<HTMLBodyElement> = event => {
         if(showPreview && isMoving ) {
             setPosition({
                 x: event.pageX - originPositionRef.current.deltaX,
@@ -114,28 +116,31 @@ const Image : React.FC<ImageProps>=(props)=>{
       }, [showPreview]);
     //滚轮放大缩小图片
     const handleZoom :React.WheelEventHandler<HTMLImageElement> = e =>{
-        let {clientHeight,clientWidth,style} = imgRef.current
-        if(e.nativeEvent.deltaY <=0 && clientWidth <1000) {
+        
+        let {clientHeight,clientWidth,style} = imgRef.current as any
+        if(e.nativeEvent.deltaY <= 0 && clientWidth < 1000) {
             style.width = clientWidth + 10 +'px'//图片宽度每次加10
             style.height = clientHeight + 10 +'px'
             style.left = style.left -10% +'px'
         }else if(e.nativeEvent.deltaY > 0) {
             if(clientWidth > 50){
                 style.width = clientWidth -10 +'px'
-                style.height = clientHeight - 10 +'px'
-                
+                style.height = clientHeight - 10 +'px'       
                 style.left = style.left +10% +'px'
             }else{
                 style.left = 0
-            }
-           
+            }          
         }
     }
     
     if(src){
         return (
             <>
-                <img src={src} {...imgProps}  onClick={preview ? onPreview : onClick}/>
+                <img src={src} 
+                {...imgProps}
+                className="image"  
+                onClick={preview ? onPreview : onClick}/>
+                {/* 实现图片预览功能 */}
                 {preview&&showPreview&&
                     <div className='img-view'                                     
                     >
@@ -145,8 +150,7 @@ const Image : React.FC<ImageProps>=(props)=>{
                             onWheel = {handleZoom}
                             style={{transform:`translate3d(${position.x}px,${position.y}px,0)`}}                                        
                             />
-                    </div>
-                       
+                    </div>                       
                 }
                 {
                     mask && showPreview &&(
@@ -165,7 +169,7 @@ const Image : React.FC<ImageProps>=(props)=>{
         }
         else return loader;
     }
-    if(error || error ===undefined) {
+    if(error || error === undefined) {
         if(typeof unloader === 'string'){
             return <img src={unloader} {...imgProps}></img>
         }

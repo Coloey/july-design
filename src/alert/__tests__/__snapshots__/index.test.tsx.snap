@@ -1,48 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Alert /> should render alert with type 1`] = `
+exports[`<Alert /> render with type and message 1`] = `
 <div
-  class="alert"
-  style="background: rgb(83, 82, 237);"
+  class="alertMes"
+>
+  success
+</div>
+`;
+
+exports[`<Alert /> render with type and message 2`] = `
+<div
+  class="alertMes"
 >
   info
 </div>
 `;
 
-exports[`<Alert /> should render alert with type 2`] = `
+exports[`<Alert /> render with type and message 3`] = `
 <div
-  class="alert"
-  style="background: rgb(255, 165, 2);"
+  class="alertMes"
+>
+  error
+</div>
+`;
+
+exports[`<Alert /> render with type and message 4`] = `
+<div
+  class="alertMes"
 >
   warning
-</div>
-`;
-
-exports[`<Alert /> should render alert with type 3`] = `
-<div
-  class="alert"
-  style="background: rgb(46, 213, 115);"
->
-  positive
-</div>
-`;
-
-exports[`<Alert /> should render alert with type 4`] = `
-<div
-  class="alert"
-  style="background: rgb(255, 71, 87);"
->
-  negative
 </div>
 `;
 
 exports[`<Alert /> should render default 1`] = `
 <div>
   <div
-    class="alert"
-    style="background: rgb(83, 82, 237);"
+    class="alert info"
+    style="opacity: 1;"
   >
-    default
+    <div
+      class="alertMes"
+    />
+    hello world
   </div>
 </div>
 `;

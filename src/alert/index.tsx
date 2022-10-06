@@ -5,7 +5,7 @@ export interface AlertProps {
   style?: object,
   closable?: boolean,
   closeText?: string,
-  message: string,
+  message?: string,
   description?: string,
   type?: 'success'|'error'|'info'|'warning',
   onClose?: Function,
@@ -33,7 +33,7 @@ const Alert: React.FC<AlertProps> = (props) => {
   return(
     visible
     ? <div
-    className={classnames(prefixCls,type || "warning")}
+    className={classnames(prefixCls,type || 'warning')}
     style={{
       opacity:visible ? '1' : '0',
       ...style

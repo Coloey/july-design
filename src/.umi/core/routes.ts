@@ -175,7 +175,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/image/index.md",
-          "updatedTime": 1663683957000,
+          "updatedTime": 1664293706000,
           "componentName": "image",
           "title": "Image 图片",
           "group": {

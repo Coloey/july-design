@@ -1,33 +1,29 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import Alert from '../alert';
+import { fireEvent, render,screen} from '@testing-library/react';
+import Alert from '../index';
 
 describe('<Alert />', () => {
-  test('should render default', () => {
-    const { container } = render(<Alert></Alert>);
+  it('should render default', () => {
+    const { container } = render(<Alert>hello world</Alert>);
     expect(container).toMatchSnapshot();
   });
-
-  test('should render alert with type and closable and onClose', () => {
-    const types: any[] = ['info', 'warning', 'success', 'error'];
-    const closable:boolean;
-    const onClose:(e:MouseEvent)=>void;
-    const { getByText } = render(
-      <>
-        {types.map((t,closable,onClose) => (
-          <Alert type={t} closable onClose>
-          </Alert>
-        ))}
-      </>,
-    );
-
-    types.forEach((t,closable,onClose) => {
-      expect(getByText(t,closable,onClose)).toMatchSnapshot();
-    });
-  });
-  test('should render alert with message',()=>{
-    const {container} = render(
-
-    )
+  
+  it("render with type and message",() => {
+    const types:any[]= ['success','info','error','warning']  
+    types.forEach((t) => {
+      render(<Alert type={t} message={t}></Alert>)
+      expect(screen.getByText(t)).toMatchSnapshot();
+    })    
   })
-});
+})
+
+describe('Alert[onClose]',() => {
+  it('onClick',() => {
+    const onClose = jest.fn()
+    render(<Alert closable onClose={onClose}></Alert>)
+    fireEvent.click(screen.getByText("x"))
+    expect(onClose).toBeCalled();
+    expect(onClose).toBeCalledTimes(1)
+  }) ;
+
+})

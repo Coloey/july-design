@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button[href] should render as a tag while has href 1`] = `
+<a
+  class="button link"
+  href="current/page"
+/>
+`;
+
+exports[`Button[size] should set size while has size prop 1`] = `
+<button
+  class="button large default"
+  type="button"
+>
+  large
+</button>
+`;
+
+exports[`Button[size] should set size while has size prop 2`] = `
+<button
+  class="button middle default"
+  type="button"
+>
+  middle
+</button>
+`;
+
+exports[`Button[size] should set size while has size prop 3`] = `
+<button
+  class="button small default"
+  type="button"
+>
+  small
+</button>
+`;
+
+exports[`Button[type] should set type while has type prop 1`] = `
+<button
+  class="button middle primary"
+  type="button"
+>
+  primary
+</button>
+`;
+
+exports[`Button[type] should set type while has type prop 2`] = `
+<button
+  class="button middle dashed"
+  type="button"
+>
+  dashed
+</button>
+`;
+
+exports[`Button[type] should set type while has type prop 3`] = `
+<button
+  class="button middle link"
+  type="button"
+>
+  link
+</button>
+`;
+
+exports[`Button[type] should set type while has type prop 4`] = `
+<button
+  class="button middle text"
+  type="button"
+>
+  text
+</button>
+`;
+
+exports[`Button[type] should set type while has type prop 5`] = `
+<button
+  class="button middle default"
+  type="button"
+>
+  default
+</button>
+`;

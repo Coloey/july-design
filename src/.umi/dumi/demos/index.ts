@@ -50,6 +50,6 @@ export default {
       loader: async () => (await import(/* webpackChunkName: "demos_egami" */'D:/MyReactComponents/src/image/demo/loaderImage.tsx')).default,
       loading: () => null,
     }),
-    previewerProps: {"sources":{"_":{"tsx":rawCode14},"index.tsx":{"import":"../index","content":rawCode10},"useImage.ts":{"import":"./useImage","content":rawCode11},"style/index.scss":{"import":"../style/index.scss","content":rawCode12}},"dependencies":{"react":{"version":"18.2.0"},"classnames":{"version":"2.3.2"}},"componentName":"image","identifier":"image-loaderimage"},
+    previewerProps: {"sources":{"_":{"tsx":rawCode14}},"dependencies":{},"componentName":"image","identifier":"image-loaderimage"},
   },
 };
