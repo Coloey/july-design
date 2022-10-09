@@ -21,6 +21,18 @@
   transition: transform 0.3s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
+.img-view .operations {
+  pointer-events: auto;
+  list-style: none;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
 .img-view img {
   width: 500px;
   height: 500px;
@@ -30,6 +42,40 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 10000;
+}
+
+.img-view .switch-left {
+  position: absolute;
+  left: 40%;
+  bottom: 0;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.img-view .switch-left-disabled {
+  cursor: not-allowed;
+}
+
+.img-view .switch-right {
+  position: absolute;
+  right: 40%;
+  bottom: 0;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.img-view .switch-right-disabled {
+  cursor: not-allowed;
 }
 
 .mask {

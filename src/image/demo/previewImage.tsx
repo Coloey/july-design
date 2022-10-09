@@ -12,8 +12,6 @@ export default () => {
             'error-path',
             'https://avatars.githubusercontent.com/u/71813516?v=4'
         ]} />           
-        </>
-
-       
+        </>       
     )
 }

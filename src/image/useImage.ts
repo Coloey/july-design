@@ -4,8 +4,8 @@ import {useState,useEffect} from 'react'
 function imgPromise(src:string) {
     return new Promise((resolve,reject) => {
         const i = new Image()
-        i.onload = () => resolve();
-        i.onerror = () => reject();
+        i.onload = () => resolve(i);
+        i.onerror = () => reject(new Error("Can not"+src));
         i.src = src;
     })
 }
@@ -14,7 +14,7 @@ const removeBlankArrayElements = (a:string[]) => a.filter(x=>x)
 const stringToArray = (x: string | string[]) => (Array.isArray(x) ? x : [x])
 
 //一组图片中找到可以加载的一张图片
-function promiseFind(sourceList:string[],imgPromise:(src:string)=>Promise<void>):Promise<string> {
+function promiseFind(sourceList:string[],imgPromise:(src:string)=>Promise<unknown>):Promise<string> {
     let done = false
     return new Promise((resolve,reject) => {
         const queueNext = (src:string) => {
@@ -39,17 +39,17 @@ function promiseFind(sourceList:string[],imgPromise:(src:string)=>Promise<void>)
     })
 }
 export interface useImageParams {
-    loadImg?: (src:string) => Promise<void>
+    loadImg?: (src:string) => Promise<unknown>
     srcList: string | string[]
 }
 //图片加载失败，加载备选图片或者error占位符
 //imgPromise作为可选参数loadImg传入，方便使用者自定义加载方法
 export function useImage({loadImg = imgPromise,srcList}:useImageParams) 
-    :{src:string | undefined,isLoading:boolean,error:any} {
+    :{src:string | undefined,loading:boolean,error:any} {
     const cache: {
         [key:string]: Promise<string>,
     } = {}
-    const [loading,setLoading] = useState<Boolean>(true)
+    const [loading,setLoading] = useState<boolean>(true)
     const [error,setError] = useState<undefined | null>(null)
     const [value,setValue] = useState<string | undefined>(undefined)
 
@@ -60,8 +60,7 @@ export function useImage({loadImg = imgPromise,srcList}:useImageParams)
     useEffect(() => {
         if(!cache[sourceKey]) {
             if(!cache[sourceKey]) {
-                cache[sourceKey] = promiseFind(sourceList,loadImg)
-               
+                cache[sourceKey] = promiseFind(sourceList,loadImg)              
             }
         }
         cache[sourceKey]
@@ -74,5 +73,5 @@ export function useImage({loadImg = imgPromise,srcList}:useImageParams)
                 setError(error)
             })
     },[sourceKey])
-    return {loading: loading,src:value,error:error}
+    return {src:value,loading: loading,error:error}
 }

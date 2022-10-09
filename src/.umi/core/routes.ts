@@ -175,7 +175,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/image/index.md",
-          "updatedTime": 1664293706000,
+          "updatedTime": 1665066107000,
           "componentName": "image",
           "title": "Image 图片",
           "group": {
@@ -219,6 +219,11 @@ export function getRoutes() {
               "depth": 4,
               "value": "当网络速度较慢时，设置加载中占位",
               "heading": "当网络速度较慢时设置加载中占位"
+            },
+            {
+              "depth": 4,
+              "value": "预览一组图片",
+              "heading": "预览一组图片"
             }
           ],
           "hasPreviewer": true

@@ -12,9 +12,12 @@ import rawCode8 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/button/sty
 import rawCode9 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/demo/basic.tsx?dumi-raw-code';
 import rawCode10 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/index.tsx?dumi-raw-code';
 import rawCode11 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/useImage.ts?dumi-raw-code';
-import rawCode12 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/style/index.scss?dumi-raw-code';
-import rawCode13 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/demo/previewImage.tsx?dumi-raw-code';
-import rawCode14 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/demo/loaderImage.tsx?dumi-raw-code';
+import rawCode12 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/Preview.tsx?dumi-raw-code';
+import rawCode13 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/PreviewGroup.tsx?dumi-raw-code';
+import rawCode14 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/style/index.scss?dumi-raw-code';
+import rawCode15 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/demo/previewImage.tsx?dumi-raw-code';
+import rawCode16 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/demo/loaderImage.tsx?dumi-raw-code';
+import rawCode17 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/demo/previewgroup.tsx?dumi-raw-code';
 
 export default {
   'alert-basic': {
@@ -36,20 +39,27 @@ export default {
       loader: async () => (await import(/* webpackChunkName: "demos_egami" */'D:/MyReactComponents/src/image/demo/basic.tsx')).default,
       loading: () => null,
     }),
-    previewerProps: {"sources":{"_":{"tsx":rawCode9},"index.tsx":{"import":"../index","content":rawCode10},"useImage.ts":{"import":"./useImage","content":rawCode11},"style/index.scss":{"import":"../style/index.scss","content":rawCode12}},"dependencies":{"react":{"version":"18.2.0"},"classnames":{"version":"2.3.2"}},"componentName":"image","identifier":"image-basic"},
+    previewerProps: {"sources":{"_":{"tsx":rawCode9},"index.tsx":{"import":"../index","content":rawCode10},"useImage.ts":{"import":"./useImage","content":rawCode11},"Preview.tsx":{"import":"./Preview","content":rawCode12},"PreviewGroup.tsx":{"import":"./PreviewGroup","content":rawCode13},"style/index.scss":{"import":"../style/index.scss","content":rawCode14}},"dependencies":{"react":{"version":"18.2.0"},"classnames":{"version":"2.3.2"}},"componentName":"image","identifier":"image-basic"},
   },
   'image-previewimage': {
     component: dynamic({
       loader: async () => (await import(/* webpackChunkName: "demos_egami" */'D:/MyReactComponents/src/image/demo/previewImage.tsx')).default,
       loading: () => null,
     }),
-    previewerProps: {"sources":{"_":{"tsx":rawCode13},"index.tsx":{"import":"../index","content":rawCode10},"useImage.ts":{"import":"./useImage","content":rawCode11},"style/index.scss":{"import":"../style/index.scss","content":rawCode12}},"dependencies":{"react":{"version":"18.2.0"},"classnames":{"version":"2.3.2"}},"componentName":"image","identifier":"image-previewimage"},
+    previewerProps: {"sources":{"_":{"tsx":rawCode15},"index.tsx":{"import":"../index","content":rawCode10},"useImage.ts":{"import":"./useImage","content":rawCode11},"Preview.tsx":{"import":"./Preview","content":rawCode12},"PreviewGroup.tsx":{"import":"./PreviewGroup","content":rawCode13},"style/index.scss":{"import":"../style/index.scss","content":rawCode14}},"dependencies":{"react":{"version":"18.2.0"},"classnames":{"version":"2.3.2"}},"componentName":"image","identifier":"image-previewimage"},
   },
   'image-loaderimage': {
     component: dynamic({
       loader: async () => (await import(/* webpackChunkName: "demos_egami" */'D:/MyReactComponents/src/image/demo/loaderImage.tsx')).default,
       loading: () => null,
     }),
-    previewerProps: {"sources":{"_":{"tsx":rawCode14}},"dependencies":{},"componentName":"image","identifier":"image-loaderimage"},
+    previewerProps: {"sources":{"_":{"tsx":rawCode16},"index.tsx":{"import":"../index","content":rawCode10},"useImage.ts":{"import":"./useImage","content":rawCode11},"Preview.tsx":{"import":"./Preview","content":rawCode12},"PreviewGroup.tsx":{"import":"./PreviewGroup","content":rawCode13},"style/index.scss":{"import":"../style/index.scss","content":rawCode14}},"dependencies":{"react":{"version":"18.2.0"},"classnames":{"version":"2.3.2"}},"componentName":"image","identifier":"image-loaderimage"},
+  },
+  'image-previewgroup': {
+    component: dynamic({
+      loader: async () => (await import(/* webpackChunkName: "demos_egami" */'D:/MyReactComponents/src/image/demo/previewgroup.tsx')).default,
+      loading: () => null,
+    }),
+    previewerProps: {"sources":{"_":{"tsx":rawCode17},"index.tsx":{"import":"..","content":rawCode10},"useImage.ts":{"import":"./useImage","content":rawCode11},"Preview.tsx":{"import":"./Preview","content":rawCode12},"PreviewGroup.tsx":{"import":"./PreviewGroup","content":rawCode13},"style/index.scss":{"import":"../style/index.scss","content":rawCode14}},"dependencies":{"react":{"version":"18.2.0"},"classnames":{"version":"2.3.2"}},"componentName":"image","identifier":"image-previewgroup"},
   },
 };

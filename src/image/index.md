@@ -33,6 +33,10 @@ group:
 
 <code src="./demo/loaderImage.tsx"></code>
 
+#### 预览一组图片
+
+<code src="./demo/previewgroup.tsx"></code>
+
 | 属性          | 说明                           | 类型                    | 默认值     |
 | ------------- | ------------------------------ | ----------------------- | ---------- |
 | src           | 图片地址                       | string/string[]         | -          |
