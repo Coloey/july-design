@@ -10,12 +10,11 @@ Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>,HTMLImage
 & {
     src: string,
     showPreview?: boolean,
+    setShowPreview?:React.Dispatch<React.SetStateAction<boolean>>
     mask?: boolean,
     maskClassName?: string,
-    preview?:boolean,
     onClose?:(e:MouseEvent)=>void,
     countRender?: (current: number, total: number) => string;
-    setShowPreview?:(value:boolean)=>boolean
    
 }
 const initialPosition = {
@@ -33,7 +32,7 @@ const Preview:any = (props:PreviewProps) => {
         setShowPreview,
         ...restProps
     } = props
-    const [mousePosition,setMousePosition] = useState<null | { x: number; y: number }>(null)  
+    //const [mousePosition,setMousePosition] = useState<null | { x: number; y: number }>(null)  
     const [position,setPosition] = useState<{ x: number,y: number }>(initialPosition)
     const originPositionRef = useRef<{
         originX: number,
@@ -79,7 +78,7 @@ const Preview:any = (props:PreviewProps) => {
     const closePreview = (event: React.SyntheticEvent<Element>) => {
         //console.log('click')
         event.stopPropagation()
-        setShowPreview(false)
+        if(setShowPreview)setShowPreview(false)
         if(!isControl) {
             setPosition(initialPosition)
         }
@@ -163,7 +162,6 @@ const Preview:any = (props:PreviewProps) => {
             }          
         }
     }
-
     return(
         <>
          {/* 实现图片预览功能 */}

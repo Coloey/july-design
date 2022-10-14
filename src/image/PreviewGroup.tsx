@@ -1,10 +1,10 @@
 import { number } from "prop-types";
 import * as React from "react"
 import { useState,useEffect } from "react"
-import type { ImageProps } from "./index"
+import type { PreviewProps } from "./Preview"
 import Preview from "./Preview";
 export interface PreviewGroupPreview 
-extends Omit<ImageProps,'mask' | 'maskClassName'> {
+extends Omit<PreviewProps,'mask' | 'maskClassName'> {
     current?: number;
     currentRender?: (current: number, total: number) => string;
 }
@@ -22,20 +22,16 @@ export interface GroupConsumerValue extends GroupConsumerProps {
     setPreviewUrls: React.Dispatch<React.SetStateAction<Map<number,PreviewUrl>>>;
     current: number;
     setCurrent: React.Dispatch<React.SetStateAction<number>>;
-    setShowPreview: React.Dispatch<React.SetStateAction<boolean>>;
-    setMousePosition: React.Dispatch<React.SetStateAction<null | {x: number, y: number}>>;
+    setisShowPreview: React.Dispatch<React.SetStateAction<boolean|undefined>>;
     registerImage: (id:number,url:string,canPreview?: boolean) => () => void;
-    rootClassName?: string;
 }
 export const context = React.createContext<GroupConsumerValue>({
     previewUrls: new Map(),
     setPreviewUrls: () => null,
-    current: null,
+    current: 0,
     setCurrent: () => null,
-    setShowPreview: () => null,
-    setMousePosition: () => null,
+    setisShowPreview: () => null,
     registerImage: () => () => null,
-    rootClassName: '',
 })
 const { Provider } = context;
 const Group: React.FC<GroupConsumerProps> = ({
@@ -43,16 +39,14 @@ const Group: React.FC<GroupConsumerProps> = ({
     preview,
 }) => {
     const {
-        visible: previewVisible = undefined,
-        onVisibleChange: onPreviewVisibleChange = undefined,
-        getContainer = undefined,
+        showPreview: previewVisible = undefined,
         current: currentIndex = 0,
         countRender = undefined
     } = typeof preview === 'object' ? preview : {};
     const [previewUrls,setPreviewUrls] = useState<Map<number,PreviewUrl>>(new Map());
-    const [current,setCurrent] = useState<number>()
+    const [current,setCurrent] = useState<number>(0)
     const [isShowPreview,setisShowPreview] = useState(previewVisible)
-    const [mousePosition,setMousePosition] = useState<null | { x: number,y: number}>(null)
+    //const [mousePosition,setMousePosition] = useState<null | { x: number,y: number}>(null)
     const isControlled = previewVisible !== undefined
     const previewUrlKeys = Array.from(previewUrls.keys())
     const currentControlledkey = previewUrlKeys[currentIndex]
@@ -98,7 +92,6 @@ const Group: React.FC<GroupConsumerProps> = ({
             current,
             setCurrent,
             setisShowPreview,
-            setMousePosition,
             registerImage
         }}
         >

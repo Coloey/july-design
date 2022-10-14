@@ -13,7 +13,7 @@
           "title": "组件",
           "path": "/alert",
           "meta": {
-            "order": 3,
+            "order": 4,
             "__fallback": true
           },
           "children": [
@@ -30,6 +30,11 @@
             {
               "path": "/image",
               "title": "Image 图片",
+              "meta": {}
+            },
+            {
+              "path": "/vitual-list",
+              "title": "VitualList",
               "meta": {}
             }
           ]

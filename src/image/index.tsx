@@ -15,6 +15,7 @@ Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>,HTMLImage
     maskClassName?:string,
     src:useImageParams['srcList']
 }
+
 let uuid = 0;
 const Image:any= (props:ImageProps)=>{
     const {
@@ -37,23 +38,18 @@ const Image:any= (props:ImageProps)=>{
         isPreviewGroup,
         setCurrent,
         setisShowPreview:setGroupShowPriew,
-        setMousePosition: setGroupMousePosition,
         registerImage,
     } = useContext(context)
-   /* const handleShowPreview = (value:boolean) => {
-        setShowPreview(value)
-    }*/
+
     const [currentId] = useState<number>(() => {
         uuid += 1;
         return uuid;
     })
 
     const onPreview = (event:React.MouseEvent<HTMLImageElement>) => {
-        
+        //预览一组图片 
         if(isPreviewGroup) {
             setCurrent(currentId)
-            //console.log(currentId)
-            //setGroupMousePosition()
             registerImage(currentId,src,preview)
             setGroupShowPriew(true)
         }
@@ -73,7 +69,6 @@ const Image:any= (props:ImageProps)=>{
             <>
                 <img src={src} 
                 {...imageProps}
-                data-testid="img"
                 onClick={preview ? onPreview : onClick}/>
                 {/* 实现图片预览功能 */}
                 {!isPreviewGroup && preview &&(<Preview
@@ -81,8 +76,7 @@ const Image:any= (props:ImageProps)=>{
                     showPreview={showPreview}
                     setShowPreview = {setShowPreview}
                     mask={mask}
-                    maskClassName={maskClassName}
-                    
+                    maskClassName={maskClassName}                    
                 ></Preview>)}
             </>
         )

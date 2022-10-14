@@ -50,10 +50,6 @@ const Button:React.FC<ButtonProps> = (props) => {
         className={classnames(prefixCls,size || 'middle', type || 'default',shape)}
         onClick={handleClick}
         >
-        {loading && (
-            <span>                
-            </span>
-        )}
         {children}
         </button>
     )

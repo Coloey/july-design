@@ -45,13 +45,13 @@ export interface useImageParams {
 //图片加载失败，加载备选图片或者error占位符
 //imgPromise作为可选参数loadImg传入，方便使用者自定义加载方法
 export function useImage({loadImg = imgPromise,srcList}:useImageParams) 
-    :{src:string | undefined,loading:boolean,error:any} {
+    :{src:string,loading:boolean,error:any} {
     const cache: {
         [key:string]: Promise<string>,
     } = {}
     const [loading,setLoading] = useState<boolean>(true)
     const [error,setError] = useState<undefined | null>(null)
-    const [value,setValue] = useState<string | undefined>(undefined)
+    const [value,setValue] = useState<string>('')
 
     //图片链接数组
     const sourceList = removeBlankArrayElements(stringToArray(srcList))

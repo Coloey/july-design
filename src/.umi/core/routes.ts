@@ -175,7 +175,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/image/index.md",
-          "updatedTime": 1665066107000,
+          "updatedTime": 1665302440000,
           "componentName": "image",
           "title": "Image 图片",
           "group": {
@@ -224,11 +224,57 @@ export function getRoutes() {
               "depth": 4,
               "value": "预览一组图片",
               "heading": "预览一组图片"
+            },
+            {
+              "depth": 3,
+              "value": "previewType",
+              "heading": "previewtype"
             }
           ],
           "hasPreviewer": true
         },
         "title": "Image 图片 - july design"
+      },
+      {
+        "path": "/vitual-list",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'vitual-list__index.md' */'D:/MyReactComponents/src/vitual-list/index.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/vitual-list/index.md",
+          "updatedTime": 1665758849139,
+          "componentName": "vitual-list",
+          "title": "VitualList",
+          "group": {
+            "title": "组件",
+            "order": 4,
+            "__fallback": true,
+            "path": "/vitual-list"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "VirtualList 虚拟列表",
+              "heading": "virtuallist-虚拟列表"
+            },
+            {
+              "depth": 2,
+              "value": "何时使用",
+              "heading": "何时使用"
+            },
+            {
+              "depth": 2,
+              "value": "代码演示",
+              "heading": "代码演示"
+            },
+            {
+              "depth": 2,
+              "value": "API",
+              "heading": "api"
+            }
+          ],
+          "hasPreviewer": true
+        },
+        "title": "VitualList - july design"
       }
     ],
     "title": "july design",
