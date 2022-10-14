@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: window10
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - run: npm
