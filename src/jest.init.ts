@@ -1,7 +1,7 @@
 import "@babel/polyfill";
-import Enzyme from "enzyme";
+/*import Enzyme from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-const NodeEnvironment = require('jest-environment-node');
+const NodeEnvironment = require('jest-environment-node');*/
 
 /*Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -18,4 +18,4 @@ const NodeEnvironment = require('jest-environment-node');
   
   }),
 });*/
-Enzyme.configure({ adapter: new Adapter() });
+//Enzyme.configure({ adapter: new Adapter() });
