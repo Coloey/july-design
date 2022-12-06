@@ -1,4 +1,4 @@
-const now = +new Date()
+const now = new Date()
 let index = 0;
 export default function uid() {
     return `${now}-${++index}`;

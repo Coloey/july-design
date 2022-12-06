@@ -246,7 +246,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/upload/index.md",
-          "updatedTime": 1666535040957,
+          "updatedTime": 1670299275000,
           "title": "Upload",
           "group": {
             "title": "组件",
