@@ -31,7 +31,7 @@ export function VirtualList<T>(props:ListProps<T>){
         height,
         ...restprops    
     } = props
-    const useVirtual = !!(virtual !== false && listHeight && estimatedItemSize);
+    //const useVirtual = !!(virtual !== false && listHeight && estimatedItemSize);
     //const inVirtual = useVirtual && resources && estimatedItemSize && resources.length > listHeight;
     let positions:PotionType = initPositionCache(estimatedItemSize,resources.length)
     //为了避免滑动过快时出现白屏，给可视区域上方和下方渲染额外的项目，在滚动时给予缓冲
@@ -84,8 +84,7 @@ export function VirtualList<T>(props:ListProps<T>){
 
     //在componentDidUpdate阶段更新缓存，useEffect渲染到页面后异步执行
     useEffect(() => {
-        let nodes: HTMLCollection = items.current?.children;
-        //console.log(nodes)
+        let nodes: HTMLCollection = items.current?.children
         if(!nodes.length) return
         //更新缓存
         updateItemSize(positions,nodes)
@@ -126,4 +125,5 @@ export function VirtualList<T>(props:ListProps<T>){
         </div>
     )
 }
+
 export default VirtualList

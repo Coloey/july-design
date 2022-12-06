@@ -27,18 +27,17 @@
             left: 50%;
             transform: translateX(-50%);
             align-items: center;
-            flex-direction: row-reverse;
-            
+            flex-direction: row-reverse;            
         }       
         img {
-        width: 500px;
-        height: 500px;
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        z-index: 10000;
+            width: 500px;
+            height: 500px;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: 10000;
         }
         .switch-left {
             position: absolute;
@@ -85,7 +84,6 @@
     justify-content: center;
     color: #fff;
     transition: opacity 0.3s;
-
 }
 .close {
     width: 30px;

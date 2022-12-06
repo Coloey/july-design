@@ -1,7 +1,6 @@
 import React,{useState} from "react"
 import VirtualList from "../index"
 const Item = ({data}) => {
-    //console.log(data)
     let dindex = parseInt(data)
     let lineHeight = dindex%2 ? '40px' : '80px';
     return (
@@ -33,7 +32,7 @@ export default () => {
         <div 
         style={{
             height: '400px',
-            overflow:'auto',
+            overflow:'scroll',
             border: '1px solid #f5f5f5',
             padding: '0 10px',
         }}>

@@ -70,12 +70,17 @@ export function getRoutes() {
           "locale": "en-US",
           "order": null,
           "filePath": "README.md",
-          "updatedTime": 1663556928000,
+          "updatedTime": 1665320727000,
           "slugs": [
             {
               "depth": 1,
               "value": "july-design",
               "heading": "july-design"
+            },
+            {
+              "depth": 3,
+              "value": "https://coloey.github.io/july-design/",
+              "heading": "httpscoloeygithubiojuly-design"
             }
           ],
           "title": "july-design"
@@ -175,7 +180,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/image/index.md",
-          "updatedTime": 1665302440000,
+          "updatedTime": 1665759106000,
           "componentName": "image",
           "title": "Image 图片",
           "group": {
@@ -236,12 +241,52 @@ export function getRoutes() {
         "title": "Image 图片 - july design"
       },
       {
+        "path": "/upload",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'upload__index.md' */'D:/MyReactComponents/src/upload/index.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/upload/index.md",
+          "updatedTime": 1666535040957,
+          "title": "Upload",
+          "group": {
+            "title": "组件",
+            "order": 5,
+            "__fallback": true,
+            "path": "/upload"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Upload 上传文件组件",
+              "heading": "upload-上传文件组件"
+            },
+            {
+              "depth": 2,
+              "value": "何时使用",
+              "heading": "何时使用"
+            },
+            {
+              "depth": 2,
+              "value": "代码演示",
+              "heading": "代码演示"
+            },
+            {
+              "depth": 3,
+              "value": "基本用法",
+              "heading": "基本用法"
+            }
+          ],
+          "hasPreviewer": true
+        },
+        "title": "Upload - july design"
+      },
+      {
         "path": "/vitual-list",
         "component": dynamic({ loader: () => import(/* webpackChunkName: 'vitual-list__index.md' */'D:/MyReactComponents/src/vitual-list/index.md')}),
         "exact": true,
         "meta": {
           "filePath": "src/vitual-list/index.md",
-          "updatedTime": 1665758849139,
+          "updatedTime": 1665759106000,
           "componentName": "vitual-list",
           "title": "VitualList",
           "group": {

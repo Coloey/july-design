@@ -1,4 +1,5 @@
 module.exports = {
+  //setupFiles: ["<rootDir>/src/jest.init.ts"],
   verbose: true,
   roots: ["<rootDir>/src"],
   moduleNameMapper: {

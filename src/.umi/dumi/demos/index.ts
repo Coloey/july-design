@@ -18,15 +18,22 @@ import rawCode14 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/sty
 import rawCode15 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/demo/previewImage.tsx?dumi-raw-code';
 import rawCode16 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/demo/loaderImage.tsx?dumi-raw-code';
 import rawCode17 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/image/demo/previewgroup.tsx?dumi-raw-code';
-import rawCode18 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/demo/basic.tsx?dumi-raw-code';
-import rawCode19 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/index.tsx?dumi-raw-code';
-import rawCode20 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/getListHeight.ts?dumi-raw-code';
-import rawCode21 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/getStartOffset.ts?dumi-raw-code';
-import rawCode22 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/updateItemSize.ts?dumi-raw-code';
-import rawCode23 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/initPositionCache.ts?dumi-raw-code';
-import rawCode24 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/binarySearch.ts?dumi-raw-code';
-import rawCode25 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/getEndIndex.ts?dumi-raw-code';
-import rawCode26 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/isFF.ts?dumi-raw-code';
+import rawCode18 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/upload/demo/base.tsx?dumi-raw-code';
+import rawCode19 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/upload/Upload.tsx?dumi-raw-code';
+import rawCode20 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/upload/AjaxUpload.tsx?dumi-raw-code';
+import rawCode21 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/upload/uid.ts?dumi-raw-code';
+import rawCode22 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/upload/attr-accept.ts?dumi-raw-code';
+import rawCode23 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/upload/request.ts?dumi-raw-code';
+import rawCode24 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/upload/demo/beforeUpload.tsx?dumi-raw-code';
+import rawCode25 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/demo/basic.tsx?dumi-raw-code';
+import rawCode26 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/index.tsx?dumi-raw-code';
+import rawCode27 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/getListHeight.ts?dumi-raw-code';
+import rawCode28 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/getStartOffset.ts?dumi-raw-code';
+import rawCode29 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/updateItemSize.ts?dumi-raw-code';
+import rawCode30 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/initPositionCache.ts?dumi-raw-code';
+import rawCode31 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/binarySearch.ts?dumi-raw-code';
+import rawCode32 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/getEndIndex.ts?dumi-raw-code';
+import rawCode33 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/isFF.ts?dumi-raw-code';
 
 export default {
   'alert-basic': {
@@ -71,11 +78,25 @@ export default {
     }),
     previewerProps: {"sources":{"_":{"tsx":rawCode17},"index.tsx":{"import":"../index","content":rawCode10},"useImage.ts":{"import":"./useImage","content":rawCode11},"Preview.tsx":{"import":"./Preview","content":rawCode12},"PreviewGroup.tsx":{"import":"./PreviewGroup","content":rawCode13},"style/index.scss":{"import":"../style/index.scss","content":rawCode14}},"dependencies":{"react":{"version":"18.2.0"},"classnames":{"version":"2.3.2"}},"componentName":"image","identifier":"image-previewgroup"},
   },
+  'upload-base': {
+    component: dynamic({
+      loader: async () => (await import(/* webpackChunkName: "demos_no_comp" */'D:/MyReactComponents/src/upload/demo/base.tsx')).default,
+      loading: () => null,
+    }),
+    previewerProps: {"sources":{"_":{"tsx":rawCode18},"Upload.tsx":{"import":"../Upload","content":rawCode19},"AjaxUpload.tsx":{"import":"./AjaxUpload","content":rawCode20},"uid.ts":{"import":"./uid","content":rawCode21},"attr-accept.ts":{"import":"./attr-accept","content":rawCode22},"request.ts":{"import":"./request","content":rawCode23}},"dependencies":{"react":{"version":"18.2.0"}},"identifier":"upload-base"},
+  },
+  'upload-beforeupload': {
+    component: dynamic({
+      loader: async () => (await import(/* webpackChunkName: "demos_no_comp" */'D:/MyReactComponents/src/upload/demo/beforeUpload.tsx')).default,
+      loading: () => null,
+    }),
+    previewerProps: {"sources":{"_":{"tsx":rawCode24},"Upload.tsx":{"import":"../Upload","content":rawCode19},"AjaxUpload.tsx":{"import":"./AjaxUpload","content":rawCode20},"uid.ts":{"import":"./uid","content":rawCode21},"attr-accept.ts":{"import":"./attr-accept","content":rawCode22},"request.ts":{"import":"./request","content":rawCode23}},"dependencies":{"react":{"version":"18.2.0"}},"identifier":"upload-beforeupload"},
+  },
   'vitual-list-basic': {
     component: dynamic({
       loader: async () => (await import(/* webpackChunkName: "demos_tsil-lautiv" */'D:/MyReactComponents/src/vitual-list/demo/basic.tsx')).default,
       loading: () => null,
     }),
-    previewerProps: {"sources":{"_":{"tsx":rawCode18},"index.tsx":{"import":"../index","content":rawCode19},"utils/getListHeight.ts":{"import":"./utils/getListHeight","content":rawCode20},"utils/getStartOffset.ts":{"import":"./utils/getStartOffset","content":rawCode21},"utils/updateItemSize.ts":{"import":"./utils/updateItemSize","content":rawCode22},"utils/initPositionCache.ts":{"import":"./utils/initPositionCache","content":rawCode23},"utils/binarySearch.ts":{"import":"./utils/binarySearch","content":rawCode24},"utils/getEndIndex.ts":{"import":"./utils/getEndIndex","content":rawCode25},"utils/isFF.ts":{"import":"./utils/isFF","content":rawCode26}},"dependencies":{"react":{"version":"18.2.0"}},"componentName":"vitual-list","identifier":"vitual-list-basic"},
+    previewerProps: {"sources":{"_":{"tsx":rawCode25},"index.tsx":{"import":"../index","content":rawCode26},"utils/getListHeight.ts":{"import":"./utils/getListHeight","content":rawCode27},"utils/getStartOffset.ts":{"import":"./utils/getStartOffset","content":rawCode28},"utils/updateItemSize.ts":{"import":"./utils/updateItemSize","content":rawCode29},"utils/initPositionCache.ts":{"import":"./utils/initPositionCache","content":rawCode30},"utils/binarySearch.ts":{"import":"./utils/binarySearch","content":rawCode31},"utils/getEndIndex.ts":{"import":"./utils/getEndIndex","content":rawCode32},"utils/isFF.ts":{"import":"./utils/isFF","content":rawCode33}},"dependencies":{"react":{"version":"18.2.0"}},"componentName":"vitual-list","identifier":"vitual-list-basic"},
   },
 };

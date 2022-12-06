@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const babel = require("gulp-babel");
-const sass = require("gulp-sass")(require("node-sass"));
+const sass = require("gulp-sass")(require("sass"));
 const autoprefixer = require("gulp-autoprefixer");
 const cssnano = require("gulp-cssnano");
 const through2 = require("through2");

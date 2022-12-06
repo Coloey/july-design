@@ -33,6 +33,11 @@
               "meta": {}
             },
             {
+              "path": "/upload",
+              "title": "Upload",
+              "meta": {}
+            },
+            {
               "path": "/vitual-list",
               "title": "VitualList",
               "meta": {}
