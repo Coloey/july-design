@@ -1,0 +1,21 @@
+
+.list-container {
+    height: 400px;
+    overflow: auto;
+    border: 1px solid #f5f5f5;
+    position: relative;
+    .list-platform {
+        position: absolute;
+        left:0;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+    .list {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+    }
+}

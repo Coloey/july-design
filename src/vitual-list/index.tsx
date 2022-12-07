@@ -50,6 +50,7 @@ export function VirtualList<T>(props:ListProps<T>){
     const getEl = () => {
         let el = scrollRef || items
         let parentEl: any = el.current?.parentElement 
+        //console.log(parentEl)
         switch(window.getComputedStyle(parentEl).overflowY) {
             case 'auto':
             case 'scroll':
@@ -111,8 +112,15 @@ export function VirtualList<T>(props:ListProps<T>){
     },[])
 
     return (
-        <div ref={scrollRef} style={{height:`${listHeight}px`}}>
+        <div className="list-container">
+            <div 
+            ref={scrollRef} 
+            style={{height:`${listHeight}px`}} 
+            className="list-platform"           
+            > 
+            </div>
             <ul ref={items}
+            className="list"
             style = {{transform:`translate3d(0,${startOffset}px,0)`}}
             >
                 {visibleData.map((data,index) => {
@@ -121,8 +129,9 @@ export function VirtualList<T>(props:ListProps<T>){
                             <Item data={data}></Item>
                         </li>)
                 })}
-            </ul>
+            </ul>           
         </div>
+       
     )
 }
 

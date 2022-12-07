@@ -34,6 +34,7 @@ import rawCode30 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-li
 import rawCode31 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/binarySearch.ts?dumi-raw-code';
 import rawCode32 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/getEndIndex.ts?dumi-raw-code';
 import rawCode33 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/utils/isFF.ts?dumi-raw-code';
+import rawCode34 from '!!dumi-raw-code-loader!D:/MyReactComponents/src/vitual-list/style/index.scss?dumi-raw-code';
 
 export default {
   'alert-basic': {
@@ -97,6 +98,6 @@ export default {
       loader: async () => (await import(/* webpackChunkName: "demos_tsil-lautiv" */'D:/MyReactComponents/src/vitual-list/demo/basic.tsx')).default,
       loading: () => null,
     }),
-    previewerProps: {"sources":{"_":{"tsx":rawCode25},"index.tsx":{"import":"../index","content":rawCode26},"utils/getListHeight.ts":{"import":"./utils/getListHeight","content":rawCode27},"utils/getStartOffset.ts":{"import":"./utils/getStartOffset","content":rawCode28},"utils/updateItemSize.ts":{"import":"./utils/updateItemSize","content":rawCode29},"utils/initPositionCache.ts":{"import":"./utils/initPositionCache","content":rawCode30},"utils/binarySearch.ts":{"import":"./utils/binarySearch","content":rawCode31},"utils/getEndIndex.ts":{"import":"./utils/getEndIndex","content":rawCode32},"utils/isFF.ts":{"import":"./utils/isFF","content":rawCode33}},"dependencies":{"react":{"version":"18.2.0"}},"componentName":"vitual-list","identifier":"vitual-list-basic"},
+    previewerProps: {"sources":{"_":{"tsx":rawCode25},"index.tsx":{"import":"../index","content":rawCode26},"utils/getListHeight.ts":{"import":"./utils/getListHeight","content":rawCode27},"utils/getStartOffset.ts":{"import":"./utils/getStartOffset","content":rawCode28},"utils/updateItemSize.ts":{"import":"./utils/updateItemSize","content":rawCode29},"utils/initPositionCache.ts":{"import":"./utils/initPositionCache","content":rawCode30},"utils/binarySearch.ts":{"import":"./utils/binarySearch","content":rawCode31},"utils/getEndIndex.ts":{"import":"./utils/getEndIndex","content":rawCode32},"utils/isFF.ts":{"import":"./utils/isFF","content":rawCode33},"style/index.scss":{"import":"../style/index.scss","content":rawCode34}},"dependencies":{"react":{"version":"18.2.0"}},"componentName":"vitual-list","identifier":"vitual-list-basic"},
   },
 };
