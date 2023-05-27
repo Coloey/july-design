@@ -21,3 +21,4 @@ import { Button } from "july-design/lib/button";
 import "july-design/lib/button/style";
 <Button type="primary">Primary</Button>
 ```
+或者配置babel-plugin-import实现按需导入
