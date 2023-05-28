@@ -19,7 +19,7 @@ export interface ListProps<T> extends Omit<React.HTMLAttributes<any>> {
     virtual?: boolean;
     visibleCount?: number;
     height?:number;
-    onScroll?: React.UIEventHandler<HTMLElement>;
+    onScroll?: React.UIEventHandler<HTMLElement>; 
 }
 export function VirtualList<T>(props:ListProps<T>){
     const {
@@ -70,10 +70,10 @@ export function VirtualList<T>(props:ListProps<T>){
         setListHeight(getListHeight(positions))
         setStartIndex(startIndex)
         setMyVisibleCount(myvisibleCount)
-        setEndIndex(getEndIndex(resources,startIndex,myvisibleCount))
+        setEndIndex(getEndIndex(resources, startIndex, myvisibleCount))
     }
 
-    //回调函数在浏览器下一次重绘之前执行
+    //回调函数在浏览器下一次重绘之前执行,提升性能
     const onScroll = () => {
         requestAnimationFrame(() => {
             let { scrollTop } = getEl()
@@ -95,7 +95,8 @@ export function VirtualList<T>(props:ListProps<T>){
         setStartOffset(getStartOffset(startIndex,positions,aboveCount))       
     },[])
 
-    //useLayoutEffect相当于componentDidMount,在dom更新后，页面渲染前执行，避免出现闪烁现象
+    //useLayoutEffect相当于componentDidMount,callback函数在dom更新后，页面渲染前执行，避免出现闪烁现象
+    // 当你的useEffect里面的操作需要处理DOM，并且会改变页面的样式，就需要用到它
     useLayoutEffect(()=>{
         const el = getEl()
         el.addEventListener('scroll',onScroll,false)

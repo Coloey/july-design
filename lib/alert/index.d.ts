@@ -3,7 +3,7 @@ export interface AlertProps {
     style?: object;
     closable?: boolean;
     closeText?: string;
-    message: string;
+    message?: string;
     description?: string;
     type?: 'success' | 'error' | 'info' | 'warning';
     onClose?: Function;

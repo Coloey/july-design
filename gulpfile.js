@@ -34,6 +34,7 @@ function cssInction(content) {
 function compileScripts(babelEnv, destDir) {
   const { scripts } = paths;
   process.env.BABEL_ENV = babelEnv;
+  // babel根据环境导出commonjs和esmodule模块
   return gulp
     .src(scripts)
     .pipe(babel()) //使用gulp-babel处理

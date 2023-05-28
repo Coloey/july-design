@@ -10,6 +10,7 @@ import {
     RCFile,
     BeforeUploadFileType
  } from "./interface"
+
 //打包后的文件?
 interface ParsedFile {
     origin: RCFile,
@@ -18,7 +19,7 @@ interface ParsedFile {
     parsedFile: RCFile
 }
 
-const AjaxUpload: Rc.FC<UploadProps> = (props) => {
+const AjaxUpload = (props: UploadProps) => {
     const {
         style,
         id,
@@ -54,7 +55,7 @@ const AjaxUpload: Rc.FC<UploadProps> = (props) => {
     
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {files} = e.target
-        const acceptedFiles = [...files].filter(
+        const acceptedFiles = [...Array.from(files)].filter(
             (file:RCFile) => !directory && attrAccept(file,accept)//不是文件夹并且是可以接受的文件类型           
         )
         uploadFiles(acceptedFiles)
@@ -76,15 +77,13 @@ const AjaxUpload: Rc.FC<UploadProps> = (props) => {
             onClick(e)
         }
     }
+
     const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
         if(e.key === 'Enter') {
             onClick(e)
         }
     }
-    const onFileDrop = (e: React.DragEvent<HTMLDivElement>) => {
-        
 
-    }
     useEffect(() => {
         setIsMounted(true)
         return ()=>{
@@ -92,15 +91,16 @@ const AjaxUpload: Rc.FC<UploadProps> = (props) => {
             abort()
         }
     },[isMounted])
+
     const uploadFiles = (files: File[]) => {
         const originFiles = [...files] as RCFile[];
         const postFiles = originFiles.map((file: RCFile) => {
-            file.uid = getUid()
+            file.uid = getUid() as number
             return processFile(file, originFiles)
         })  
         //批量上传图片
         Promise.all(postFiles).then(fileList => {
-            //?
+            //
             onBatchStart?.(fileList.map(({ origin, parsedFile}) => ({file: origin,parsedFile})))
             fileList
                 .filter(file => file.parsedFile !== null)
@@ -109,12 +109,14 @@ const AjaxUpload: Rc.FC<UploadProps> = (props) => {
                 })
         })
     }
+
     //process file before upload,when all file is ready,we start upload
     const processFile = async(file: RCFile, fileList: RCFile[]):Promise<ParsedFile> => {
         let transformedFile: BeforeUploadFileType | void = file
         if(beforeUpload) {
             try{
                 transformedFile = await beforeUpload(file,fileList)
+                console.log(transformedFile)
             } catch(e){
                 transformedFile = false
             }
@@ -141,7 +143,8 @@ const AjaxUpload: Rc.FC<UploadProps> = (props) => {
         }else{
             mergedData = data
         }
-        //经过打包的数据?
+
+        //经过打包的数据
         const parsedData = 
         (typeof transformedFile === 'object' || typeof transformedFile === 'string') &&
         transformedFile ? transformedFile : file
@@ -220,8 +223,6 @@ const AjaxUpload: Rc.FC<UploadProps> = (props) => {
             onKeyDown: openFileDialogOnClick ? onKeyDown : () => {},
             onMouseEnter,
             onMouseLeave,
-            onDrop: onFileDrop,
-            onDragOver: onFileDrop,
             tabIndex: '0',
         }
     
@@ -233,7 +234,6 @@ const AjaxUpload: Rc.FC<UploadProps> = (props) => {
             ref = {fileInput}
             type="file"
             key={uid}
-            //style={{display:"none"}}
             accept={accept}
             multiple={multiple}
             onChange={onChange}            

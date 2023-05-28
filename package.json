@@ -1,5 +1,5 @@
 {
-  "name": "myreactcomponents",
+  "name": "july-design",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -19,7 +19,7 @@
     "deploy:site": "npm run build:site && gh-pages -d doc-site",
     "build:types": "tsc -p tsconfig.build.json && cpr lib esm",
     "clean": "rimraf lib esm dist",
-    "build": "npm run clean && npm run build:types && gulp",
+    "build": "npm run clean && npm run build:types&& gulp",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -68,6 +68,7 @@
     "mathjax": "^3.2.2",
     "prettier": "^2.7.1",
     "prop-types": "^15.8.1",
+    "rc-motion": "^2.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-transition-group": "^4.4.5",

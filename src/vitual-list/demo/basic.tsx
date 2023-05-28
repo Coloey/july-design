@@ -31,10 +31,10 @@ export default () => {
             <button onClick = {changeResources}>重新获取数据源</button>
         </div>
         <VirtualList
-        Item = {ItemMemo}
-        resources={resources}
-        estimatedItemSize={60}
-        visibleCount = {10}
+            Item = {ItemMemo}
+            resources={resources}
+            estimatedItemSize={60}
+            visibleCount = {10}
         />
         </>
         

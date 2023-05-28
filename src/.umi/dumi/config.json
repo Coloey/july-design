@@ -33,6 +33,11 @@
               "meta": {}
             },
             {
+              "path": "/modal",
+              "title": "Modal",
+              "meta": {}
+            },
+            {
               "path": "/upload",
               "title": "Upload",
               "meta": {}

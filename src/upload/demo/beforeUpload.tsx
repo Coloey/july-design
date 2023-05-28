@@ -1,7 +1,7 @@
 import React from "react";
 import Upload from "../Upload";
 const props = {
-    action: 'upload/do',
+    action: '/upload.do',
     multiple: true,
     onStart(file) {
         console.log('onStart', file, file.name);

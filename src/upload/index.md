@@ -19,7 +19,7 @@ group:
 
 <code src="./demo/base.tsx"></code>
 
-<!-- <code src="./demo/beforeUpload.tsx"></code> -->
+<code src="./demo/beforeUpload.tsx"></code>
 
 | 属性       | 说明                                             | 类型                                         | 默认值 |
 | ---------- | ------------------------------------------------ | -------------------------------------------- | ------ |

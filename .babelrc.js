@@ -23,7 +23,7 @@ module.exports = {
         [
           "@babel/plugin-transform-runtime",
           {
-            useESModules: true, //使用esm形式的helper
+            useESModules: true, //使用esm形式的helper函数
           },
         ],
       ],

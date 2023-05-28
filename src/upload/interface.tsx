@@ -21,7 +21,7 @@ export interface UploadProps
         onBatchStart?: (
             fileList: {file: RCFile; parsedFile: Exclude<BeforeUploadFileType,boolean>}[],
         ) => void;
-        onStart?: (file: RcFile) => void;
+        onStart?: (file: RCFile) => void;
         onError?: (error: Error, ret: Record<string,unknown>, file: RCFile) => void;
         onSuccess?: (response: Record<string,unknown>,file: RCFile,xhr: XMLHttpRequest) => void;
         onProgress?: (event: UploadProgressEvent,file: RCFile) => void;
@@ -44,7 +44,6 @@ export interface UploadProgressEvent extends Partial<ProgressEvent> {
 }
 
 export type UploadRequestHeader = Record<string, string>
-export interface
 export interface UploadRequestError extends Error {
     status?: number;
     method?: UploadRequestMethod;
@@ -52,7 +51,7 @@ export interface UploadRequestError extends Error {
 }
 export interface UploadRequestOption<T = any> {
     onProgress?: (event: UploadProgressEvent) => void;
-    onError?: (event: UploadRequestError),
+    onError?: (event: UploadRequestError) => void,
     onSuccess?: (body: T,xhr?: XMLHttpRequest) => void,
     data?: Record<string,unknown>,
     filename?: string,

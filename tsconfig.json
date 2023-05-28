@@ -3,14 +3,14 @@
       "baseUrl": "./",
       "target": "esnext",
       "module": "commonjs",
-      "jsx": "react",
+      "jsx": "react-jsx",
       "declaration": true,
       "declarationDir": "lib",
       "strict": true,
       "moduleResolution": "node",
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,
-      "resolveJsonModule": true
+      "resolveJsonModule": true,
     },
     "include": ["src", "typings.d.ts"],
     "exclude": ["src/**/demo","src/**/__tests__"]

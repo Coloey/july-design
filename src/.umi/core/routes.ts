@@ -241,12 +241,38 @@ export function getRoutes() {
         "title": "Image 图片 - july design"
       },
       {
+        "path": "/modal",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'modal__index.md' */'D:/MyReactComponents/src/modal/index.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/modal/index.md",
+          "updatedTime": 1685190273024,
+          "componentName": "modal",
+          "title": "Modal",
+          "group": {
+            "title": "组件",
+            "order": 7,
+            "__fallback": true,
+            "path": "/modal"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Modal 模态框",
+              "heading": "modal-模态框"
+            }
+          ],
+          "hasPreviewer": true
+        },
+        "title": "Modal - july design"
+      },
+      {
         "path": "/upload",
         "component": dynamic({ loader: () => import(/* webpackChunkName: 'upload__index.md' */'D:/MyReactComponents/src/upload/index.md')}),
         "exact": true,
         "meta": {
           "filePath": "src/upload/index.md",
-          "updatedTime": 1670299275000,
+          "updatedTime": 1670385024000,
           "title": "Upload",
           "group": {
             "title": "组件",
