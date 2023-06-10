@@ -83,7 +83,7 @@ export default function Modal(props: ModalPropTypes) {
     const handleConfirm = () => {
         hiddenModal(onConfirm)
     }
-    const closeModal = function(event: SyntheticEvent) {
+    const closeModal = function(event: KeyboardEvent) {
         const e = event || window.event;
         if(e && e.keyCode === 27) {
             handleClose();

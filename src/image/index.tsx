@@ -16,7 +16,7 @@ Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>,HTMLImage
     src:useImageParams['srcList']
 }
 
-let uuid = 0;
+let id = 0;
 const Image:any= (props:ImageProps)=>{
     const {
         src:srcList,
@@ -42,8 +42,8 @@ const Image:any= (props:ImageProps)=>{
     } = useContext(context)
 
     const [currentId] = useState<number>(() => {
-        uuid += 1;
-        return uuid;
+        id += 1;
+        return id;
     })
 
     const onPreview = (event:React.MouseEvent<HTMLImageElement>) => {

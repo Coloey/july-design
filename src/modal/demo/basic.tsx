@@ -1,6 +1,7 @@
 import Modal from "../index"
 import {useEffect, useState} from "react"
-import "../style"
+import React from 'react'
+import "../style/index.scss"
 export default () => {
     const modal = (
         <Modal
@@ -17,10 +18,10 @@ export default () => {
         </Modal>
     )
     return (
-        <React.StrictMode>
+        <>
         <div>
             {modal}
         </div>
-        </React.StrictMode>
+        </>
     )
 }
