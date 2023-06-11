@@ -34,7 +34,7 @@ async function render() {
     initialValue: {},
   });
 
-  const basename = contextOpts.basename || '/july-design';
+  const basename = contextOpts.basename || '/july-design/';
   const historyType = contextOpts.historyType || 'browser';
 
   const history = createHistory({

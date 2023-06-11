@@ -47,14 +47,19 @@ const CountDown: React.FC<CountDownProps> = (props) => {
         setHours(hh || 0)
         setMins(mm || 0)
         setSeconds(ss || 0)
-        // setTimeout会在浏览器切换到后台后冷却
+        /* setTimeout模拟setInterval原因：
+        setInterval在每次把任务push到任务队列前 会判断一下上次任务是否还在队列中，如果在
+        就不会把任务放进队列，这样可能导致某些间隔会被跳过，setTimeout产生的任务会直接push到任务队列
+        */
         setTimeout(() => {
             countDown(time-1);
         }, 1000)
     }
     function beforeunload() {
         // 刷新页面前
-        sessionStorage.setItem('duration', nowTime);
+        if(nowTime) {
+            sessionStorage.setItem('duration', nowTime);
+        }
     }
     useEffect(() => {
         // 拦截判断是否离开当前页面
@@ -68,7 +73,7 @@ const CountDown: React.FC<CountDownProps> = (props) => {
         return () => {
             window.removeEventListener('beforeunload', beforeunload);
         }
-    },[])
+    },[duration])
     return (
         <div>
             {days}:{hours}:{mins}:{seconds}

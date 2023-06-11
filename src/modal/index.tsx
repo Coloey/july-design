@@ -33,7 +33,7 @@ type ModalPropTypes = {
     mask?: any;
     maskclosable?: boolean;
     maskStyle?: Record<string, any>;
-    okText?: string;
+    confirmText?: string;
     title?: ReactNode;
     visible?: boolean;
     width?: string;
@@ -65,7 +65,7 @@ export default function Modal(props: ModalPropTypes) {
         onConfirm,
         children
     } = props;
-    const [hidden, setHidden] = useState<Boolean>(!visible);
+    const [hidden, setHidden] = useState<Boolean>(!visible)
     const [destroyChild, setDestroyChild] = useState<Boolean>(false);
     const hiddenModal = (cb: ()=>any) => {
         setHidden(()=>{
@@ -104,13 +104,15 @@ export default function Modal(props: ModalPropTypes) {
     }, [])
 
     useEffect(() => {
+        console.log(visible)
         if(visible) {
             setHidden(false);
             if(destroyOnClose){
                 setDestroyChild(true)
             }
         }
-        return () => {};
+        return () => {
+        };
     },[visible,destroyOnClose])
 
     return(
