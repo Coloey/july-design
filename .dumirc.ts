@@ -1,5 +1,5 @@
 import { defineConfig } from 'dumi';
-let base = '/july-design';
+let base = '/july-design/';
 let publicPath = '/july-design/';
 //通过环境变量区分本地环境，实现本地环境正常预览
 if(process.env.SITE_BUID_ENV === 'PREVIEW'){
